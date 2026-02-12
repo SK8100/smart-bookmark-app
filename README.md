@@ -63,6 +63,14 @@ GitHub Repository: [INSERT GITHUB URL HERE]
     -   **Cause**: Google OAuth is not enabled in the Supabase Authentication > Providers settings.
     -   **Solution**: Go to Supabase Dashboard > Authentication > Providers > Google and toggle it to "Enabled". You will need a Google Client ID and Secret (search for "Supabase Google OAuth" for a guide).
 
+### Realtime Sync Setup (Crucial)
+
+If bookmarks do not update instantly across different tabs/browsers:
+1.  Go to your **Supabase Dashboard** -> **Database** -> **Replication**.
+2.  Click on the **Replication** icon (looks like a circular arrow).
+3.  Under **Tables**, find `bookmarks` and toggle it to **Enabled**.
+4.  *Note: Make sure the `supabase_realtime` publication includes the `bookmarks` table (our `supabase/schema.sql` does this automatically).*
+
 ## Database Schema
 
 Run the SQL commands in `supabase/schema.sql` in your Supabase SQL Editor to set up the database.
